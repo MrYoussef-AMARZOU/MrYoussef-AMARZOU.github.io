@@ -94,7 +94,7 @@
     footer_text: "Ingenieur industriel & digital - Transformer les idees en solutions numeriques impactantes.",
     footer_nav: "Navigation",
     footer_follow: "Me suivre",
-    footer_copy: "Youssef AMARZOU. Tous droits reserves.",
+    footer_copy: "Tous droits reserves.",
     scroll: "Scroll"
   },
   en: {
@@ -192,7 +192,7 @@
     footer_text: "Industrial & Digital Engineer - Turning ideas into impactful digital solutions.",
     footer_nav: "Navigation",
     footer_follow: "Follow me",
-    footer_copy: "Youssef AMARZOU. All rights reserved.",
+    footer_copy: "All rights reserved.",
     scroll: "Scroll"
   },  es: {
     badge: "Disponible para nuevas oportunidades",
@@ -289,7 +289,7 @@
     footer_text: "Ingeniero industrial y digital - Transformando ideas en soluciones digitales impactantes.",
     footer_nav: "Navegacion",
     footer_follow: "Seguime",
-    footer_copy: "Youssef AMARZOU. Todos los derechos reservados.",
+    footer_copy: "Todos los derechos reservados.",
     scroll: "Scroll"
   },
   zh: {
@@ -387,7 +387,7 @@
     footer_text: "工业与数字化工程师 - 将想法转化为有影响力的数字解决方案。",
     footer_nav: "导航",
     footer_follow: "关注我",
-    footer_copy: "优素福·阿马尔祖。保留所有权利。",
+    footer_copy: "保留所有权利。",
     scroll: "滚动"
   },
   ru: {
@@ -485,7 +485,7 @@
     footer_text: "Инженер промышленности и цифровых технологий - Превращаю идеи в цифровые решения.",
     footer_nav: "Навигация",
     footer_follow: "Подписаться",
-    footer_copy: "Юсуф Амарзу. Все права защищены.",
+    footer_copy: "Все права защищены.",
     scroll: "Вниз"
   },
   ar: {
@@ -583,7 +583,7 @@
     footer_text: "مهندس صناعي ورقمي - تحويل الأفكار إلى حلول رقمية مؤثرة.",
     footer_nav: "التنقل",
     footer_follow: "تابعني",
-    footer_copy: "يوسف امرزو. جميع الحقوق محفوظة.",
+    footer_copy: "جميع الحقوق محفوظة.",
     scroll: "اسحب"
   }
 };
