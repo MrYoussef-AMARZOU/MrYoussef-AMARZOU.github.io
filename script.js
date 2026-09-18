@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skill-card, .timeline-item, .project-card, .stat-item, .contact-link, .about-text, .about-stats, .about-info, .contact-form-wrapper, .contact-info').forEach(el => {
+    document.querySelectorAll('.skill-card, .timeline-item, .project-card, .stat-item, .contact-link, .about-right, .about-stats, .about-info, .contact-form, .about-left').forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
