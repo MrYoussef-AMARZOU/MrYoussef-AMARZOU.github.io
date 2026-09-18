@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     const contactForm = document.getElementById('contactForm');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Theme toggle
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
 
     // Navbar scroll effect
     window.addEventListener('scroll', () => {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +21,16 @@
             <li><a href="#projects" class="nav-link">Projets</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer de theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -45,6 +51,7 @@
                 </div>
                 <div class="hero-social">
                     <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/Youssef-AMARZOU" target="_blank" aria-label="GitHub Alt"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/youssef-amarzou-8b18413a7" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://huggingface.co/ysfmo98" target="_blank" aria-label="HuggingFace"><i class="fab fa-huggingface"></i></a>
                     <a href="https://kaggle.com/amarzouyoussef" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
@@ -53,7 +60,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-image-wrapper">
-                    <div class="hero-initials">YA</div>
+                    <img src="assets/images/profile.jpg" alt="Youssef AMARZOU" class="hero-photo">
                 </div>
                 <div class="hero-tags">
                     <span class="tag tag-ai">AI</span>
@@ -94,7 +101,7 @@
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-number" data-count="10">0</span>
                         <span class="stat-label">Projets GitHub</span>
                     </div>
                     <div class="stat-item">
@@ -128,7 +135,7 @@
         </div>
     </section>
 
-    <section class="section section-dark" id="skills">
+    <section class="section section-alt" id="skills">
         <div class="container">
             <span class="section-number">02</span>
             <h2 class="section-title">Competences</h2>
@@ -182,6 +189,7 @@
                         <span>Next.js</span>
                         <span>React</span>
                         <span>Electron</span>
+                        <span>Rust</span>
                     </div>
                 </div>
                 <div class="skill-card">
@@ -197,35 +205,33 @@
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-digital-tachograph"></i></div>
-                    <h4>Digitalisation</h4>
+                    <h4>Digitalisation & RPA</h4>
                     <div class="skill-tags">
                         <span>Power Platform</span>
+                        <span>UiPath</span>
                         <span>n8n</span>
                         <span>Apps Script</span>
                         <span>ETL</span>
-                        <span>Pipelines</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Cybersecurite</h4>
+                    <div class="skill-tags">
+                        <span>Pentest IT</span>
+                        <span>OT/SCADA</span>
+                        <span>Framework</span>
+                        <span>Security Audit</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-square-root-alt"></i></div>
-                    <h4>Mathematiques</h4>
+                    <h4>Genie Civil & Calcul</h4>
                     <div class="skill-tags">
-                        <span>Modelisation</span>
-                        <span>Optimisation</span>
-                        <span>Statistiques</span>
-                        <span>Algorithmes</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                    <h4>Outils & Methodes</h4>
-                    <div class="skill-tags">
-                        <span>Google Workspace</span>
-                        <span>Excel</span>
-                        <span>Hugging Face</span>
-                        <span>Playwright</span>
-                        <span>GitLab</span>
-                        <span>Agile</span>
+                        <span>Eurocode 2</span>
+                        <span>Beton Arme</span>
+                        <span>Calcul Structural</span>
+                        <span>BOQ</span>
                     </div>
                 </div>
             </div>
@@ -314,7 +320,7 @@
         </div>
     </section>
 
-    <section class="section section-dark" id="projects">
+    <section class="section section-alt" id="projects">
         <div class="container">
             <span class="section-number">04</span>
             <h2 class="section-title">Portfolio</h2>
@@ -326,10 +332,52 @@
                 <button class="filter-btn" data-filter="ai">IA / LLM</button>
                 <button class="filter-btn" data-filter="data">Data Engineering</button>
                 <button class="filter-btn" data-filter="industry">Industriel</button>
-                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="civil">Genie Civil</button>
+                <button class="filter-btn" data-filter="web">Web / ERP</button>
             </div>
 
             <div class="projects-grid">
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Metre BA Agent</h4>
+                        <p class="project-type">Agent IA de metrique automatique</p>
+                        <p>Agent IA de metré automatique pour genie civil. Extraction de donnees techniques (plan, metrique, devis) avec automatisation de reporting. Zero-hallucination: texte natif + vecteurs + vision sourcee.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>LLM</span>
+                            <span>Vision</span>
+                            <span>RAG</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Youssef-AMARZOU/metre-ba-agent" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civil web">
+                    <div class="project-image">
+                        <div class="project-placeholder"><i class="fas fa-building"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>EGF Structural Suite</h4>
+                        <p class="project-type">Suite de calcul structural BTP</p>
+                        <p>48 modules migres du legacy VBA vers Rust + React. Suite open source d'outils de calcul structural pour le genie civil. Automatisation de verifications reglementaires.</p>
+                        <div class="project-tags">
+                            <span>Rust</span>
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Eurocode</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Youssef-AMARZOU/egf-structural-suite" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://egf-structural-suite.vercel.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card" data-category="ai data">
                     <div class="project-image">
                         <div class="project-placeholder"><i class="fas fa-project-diagram"></i></div>
@@ -350,7 +398,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="industry ai">
+                <div class="project-card" data-category="industry">
                     <div class="project-image">
                         <div class="project-placeholder"><i class="fas fa-industry"></i></div>
                     </div>
@@ -370,48 +418,90 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="ai">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
+                        <div class="project-placeholder"><i class="fas fa-hard-hat"></i></div>
                     </div>
                     <div class="project-content">
-                        <h4>Metre BA Agent</h4>
-                        <p class="project-type">Agent IA de metrique automatique</p>
-                        <p>Agent IA de metré automatique pour genie civil. Extraction de donnees techniques (plan, metrique, devis) avec automatisation de reporting.</p>
+                        <h4>OpenConstructionERP</h4>
+                        <p class="project-type">ERP Construction Open Source</p>
+                        <p>BOQ, PDF/CAD/BIM takeoff, AI cost matching. 42 catalogues regionaux, 21 langues, 71 modules. Installation via pip.</p>
                         <div class="project-tags">
                             <span>Python</span>
-                            <span>LLM</span>
-                            <span>Vision</span>
-                            <span>RAG</span>
+                            <span>ERP</span>
+                            <span>BIM</span>
+                            <span>AI</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/MrYoussef-AMARZOU/metre-ba-agent" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/Youssef-AMARZOU/OpenConstructionERP" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://openconstructionerp.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Site</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="web industry">
+                <div class="project-card" data-category="industry">
                     <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-building"></i></div>
+                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
                     </div>
                     <div class="project-content">
-                        <h4>EGF Structural Suite</h4>
-                        <p class="project-type">Suite open source de calcul structural</p>
-                        <p>Suite open source d'outils de calcul structural pour le genie civil. Automatisation de verifications reglementaires.</p>
+                        <h4>UiPath Open Source</h4>
+                        <p class="project-type">RPA Automation</p>
+                        <p>4 cas d'automatisation RPA avec REFramework. Robots de processus metier pour la digitalisation des flux de travail.</p>
                         <div class="project-tags">
-                            <span>Python</span>
-                            <span>Structural</span>
-                            <span>Open Source</span>
+                            <span>UiPath</span>
+                            <span>RPA</span>
+                            <span>REFramework</span>
+                            <span>Automation</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/Youssef-AMARZOU/uipath-open-source" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="industry">
+                    <div class="project-image">
+                        <div class="project-placeholder"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Pentest Lab</h4>
+                        <p class="project-type">Cybersecurite IT & OT/SCADA</p>
+                        <p>Framework professionnel de pentest pour systemes IT et OT/SCADA. Audit de securite des systemes industriels.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pentest</span>
+                            <span>SCADA</span>
+                            <span>Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Youssef-AMARZOU/pentest-lab" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civil">
+                    <div class="project-image">
+                        <div class="project-placeholder"><i class="fas fa-calculator"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>pypyBABA</h4>
+                        <p class="project-type">Calcul beton arme — Eurocode 2</p>
+                        <p>Calcul de beton arme selon l'Eurocode 2. Outil open source pour les ingenieurs structure.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Eurocode 2</span>
+                            <span>Structural</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Youssef-AMARZOU/pypyBABA" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://www.pypyBABA.fr" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Site</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="projects-cta">
-                <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="btn btn-outline">Voir tous mes projets sur GitHub</a>
+                <a href="https://github.com/Youssef-AMARZOU" target="_blank" class="btn btn-outline">Voir tous mes projets sur GitHub</a>
             </div>
         </div>
     </section>
@@ -489,6 +579,7 @@
                         <h5>Me suivre</h5>
                         <div class="footer-social">
                             <a href="https://github.com/MrYoussef-AMARZOU" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/Youssef-AMARZOU" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://linkedin.com/in/youssef-amarzou-8b18413a7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://huggingface.co/ysfmo98" target="_blank"><i class="fab fa-huggingface"></i></a>
                             <a href="https://kaggle.com/amarzouyoussef" target="_blank"><i class="fab fa-kaggle"></i></a>
