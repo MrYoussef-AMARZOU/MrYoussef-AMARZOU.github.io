@@ -391,6 +391,7 @@ body {
     font-size: 0.75rem;
     font-family: var(--font-mono);
     animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 .scroll-arrow {
