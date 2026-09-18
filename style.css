@@ -353,15 +353,13 @@ body {
 }
 
 .hero-tags {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
-    z-index: 10;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .tag {
@@ -1064,10 +1062,6 @@ body {
     }
 
     .hero-tags {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
         justify-content: center;
         margin-top: 1rem;
     }
@@ -1317,9 +1311,7 @@ body {
 }
 
 .rtl .hero-tags {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    justify-content: center;
 }
 
 /* Arabic font override */
