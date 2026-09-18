@@ -327,6 +327,7 @@ body {
     flex-shrink: 0;
     position: relative;
     z-index: 1;
+    overflow: visible;
 }
 
 .hero-image-wrapper {
@@ -339,6 +340,7 @@ body {
     justify-content: center;
     position: relative;
     padding: 4px;
+    overflow: hidden;
 }
 
 .hero-photo {
@@ -352,10 +354,12 @@ body {
 
 .hero-tags {
     position: absolute;
-    top: -10px;
-    right: -50px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
     z-index: 10;
 }
@@ -1060,7 +1064,12 @@ body {
     }
 
     .hero-tags {
-        right: -20px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
     }
 
     .about-stats {
@@ -1308,8 +1317,9 @@ body {
 }
 
 .rtl .hero-tags {
+    left: 50%;
     right: auto;
-    left: -30px;
+    transform: translateX(-50%);
 }
 
 /* Arabic font override */
