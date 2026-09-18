@@ -355,11 +355,8 @@ body {
 .hero-tags {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
-    position: relative;
-    z-index: 1;
 }
 
 .tag {
@@ -1063,7 +1060,6 @@ body {
 
     .hero-tags {
         justify-content: center;
-        margin-top: 1rem;
     }
 
     .about-stats {
@@ -1311,7 +1307,7 @@ body {
 }
 
 .rtl .hero-tags {
-    justify-content: center;
+    direction: rtl;
 }
 
 /* Arabic font override */
