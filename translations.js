@@ -28,7 +28,7 @@
     skills_subtitle: "Stack Technique",
     skills_desc: "Les technologies que j'utilise au quotidien",
     skill1: "IA & Machine Learning",
-    skill2: "LLM & Generative AI",
+    skill2: "LLM & IA Generative",
     skill3: "Industrie 4.0",
     skill4: "Developpement",
     skill5: "Donnees & ETL",
@@ -194,8 +194,7 @@
     footer_follow: "Follow me",
     footer_copy: "Youssef AMARZOU. All rights reserved.",
     scroll: "Scroll"
-  },
-  es: {
+  },  es: {
     badge: "Disponible para nuevas oportunidades",
     hero_title_1: "Hola, soy",
     hero_subtitle: "Ingeniero industrial y digital",
@@ -388,7 +387,7 @@
     footer_text: "工业与数字化工程师 - 将想法转化为有影响力的数字解决方案。",
     footer_nav: "导航",
     footer_follow: "关注我",
-    footer_copy: "Youssef AMARZOU。保留所有权利。",
+    footer_copy: "优素福·阿马尔祖。保留所有权利。",
     scroll: "滚动"
   },
   ru: {
@@ -486,7 +485,7 @@
     footer_text: "Инженер промышленности и цифровых технологий - Превращаю идеи в цифровые решения.",
     footer_nav: "Навигация",
     footer_follow: "Подписаться",
-    footer_copy: "Youssef AMARZOU. Все права защищены.",
+    footer_copy: "Юсуф Амарзу. Все права защищены.",
     scroll: "Вниз"
   },
   ar: {
@@ -535,7 +534,7 @@
     exp2_company: "SCCB، برشيد",
     exp2_desc: "تحليل وتنظيف بيانات المخزون، التحسين باستخدام تحليل ABC وقانون باريتو.",
     formation_title: "التعليم",
-    form1_title: "ماجستير - التقنيات الصناعية ل_factory of the future",
+    form1_title: "ماجستير - التقنيات الصناعية لمصنع المستقبل",
     form1_school: "Green Tech Institute، جامعة محمد السادس متعددة التخصصات، بنغيرير",
     form2_title: "ليسانس مهني - هندسة العمليات الصناعية والرقمنة",
     form2_school: "Green Tech Institute، جامعة محمد السادس متعددة التخصصات، بنغيرير",
@@ -584,7 +583,7 @@
     footer_text: "مهندس صناعي ورقمي - تحويل الأفكار إلى حلول رقمية مؤثرة.",
     footer_nav: "التنقل",
     footer_follow: "تابعني",
-    footer_copy: "Youssef AMARZOU. جميع الحقوق محفوظة.",
+    footer_copy: "يوسف امرزو. جميع الحقوق محفوظة.",
     scroll: "اسحب"
   }
 };
