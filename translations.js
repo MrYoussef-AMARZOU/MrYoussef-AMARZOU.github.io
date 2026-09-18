@@ -2,6 +2,7 @@
   fr: {
     badge: "Disponible pour de nouvelles opportunites",
     hero_title_1: "Bonjour, je suis",
+    hero_name: "Youssef AMARZOU",
     hero_subtitle: "Ingenieur industriel & digital",
     hero_desc: "Profil multidisciplinaire combinant <strong>ingenierie</strong>, <strong>transformation digitale</strong>, <strong>Intelligence Artificielle</strong> et <strong>systemes industriels</strong>. Je conçois et deploie des solutions numeriques orientees impact operationnel et creation de valeur.",
     btn_projects: "Voir mes projets",
@@ -94,12 +95,14 @@
     footer_text: "Ingenieur industriel & digital - Transformer les idees en solutions numeriques impactantes.",
     footer_nav: "Navigation",
     footer_follow: "Me suivre",
+    footer_name: "Youssef AMARZOU",
     footer_copy: "Tous droits reserves.",
     scroll: "Scroll"
   },
   en: {
     badge: "Available for new opportunities",
     hero_title_1: "Hello, I'm",
+    hero_name: "Youssef AMARZOU",
     hero_subtitle: "Industrial & Digital Engineer",
     hero_desc: "Multidisciplinary profile combining <strong>engineering</strong>, <strong>digital transformation</strong>, <strong>Artificial Intelligence</strong> and <strong>industrial systems</strong>. I design and deploy digital solutions focused on operational impact and value creation.",
     btn_projects: "View my projects",
@@ -192,11 +195,13 @@
     footer_text: "Industrial & Digital Engineer - Turning ideas into impactful digital solutions.",
     footer_nav: "Navigation",
     footer_follow: "Follow me",
+    footer_name: "Youssef AMARZOU",
     footer_copy: "All rights reserved.",
     scroll: "Scroll"
   },  es: {
     badge: "Disponible para nuevas oportunidades",
     hero_title_1: "Hola, soy",
+    hero_name: "Youssef AMARZOU",
     hero_subtitle: "Ingeniero industrial y digital",
     hero_desc: "Perfil multidisciplinario que combina <strong>ingenieria</strong>, <strong>transformacion digital</strong>, <strong>Inteligencia Artificial</strong> y <strong>sistemas industriales</strong>. Diseno y despliego soluciones digitales orientadas al impacto operativo y la creacion de valor.",
     btn_projects: "Ver mis proyectos",
@@ -289,12 +294,14 @@
     footer_text: "Ingeniero industrial y digital - Transformando ideas en soluciones digitales impactantes.",
     footer_nav: "Navegacion",
     footer_follow: "Seguime",
+    footer_name: "Youssef AMARZOU",
     footer_copy: "Todos los derechos reservados.",
     scroll: "Scroll"
   },
   zh: {
     badge: "欢迎新的合作机会",
     hero_title_1: "你好，我是",
+    hero_name: "优素福·阿马尔祖",
     hero_subtitle: "工业与数字化工程师",
     hero_desc: "跨学科背景，结合<strong>工程学</strong>、<strong>数字化转型</strong>、<strong>人工智能</strong>和<strong>工业系统</strong>。我设计并部署以运营影响和价值创造为导向的数字化解决方案。",
     btn_projects: "查看项目",
@@ -387,12 +394,14 @@
     footer_text: "工业与数字化工程师 - 将想法转化为有影响力的数字解决方案。",
     footer_nav: "导航",
     footer_follow: "关注我",
+    footer_name: "优素福·阿马尔祖",
     footer_copy: "保留所有权利。",
     scroll: "滚动"
   },
   ru: {
     badge: "Доступен для новых возможностей",
     hero_title_1: "Привет, я",
+    hero_name: "Юсуф Амарзу",
     hero_subtitle: "Инженер промышленности и цифровых технологий",
     hero_desc: "Междисциплинарный профиль, совмещающий <strong>инженерию</strong>, <strong>цифровую трансформацию</strong>, <strong>искусственный интеллект</strong> и <strong>промышленные системы</strong>. Проектирую и внедряю цифровые решения, ориентированные на операционный эффект и создание стоимости.",
     btn_projects: "Мои проекты",
@@ -485,12 +494,14 @@
     footer_text: "Инженер промышленности и цифровых технологий - Превращаю идеи в цифровые решения.",
     footer_nav: "Навигация",
     footer_follow: "Подписаться",
+    footer_name: "Юсуф Амарзу",
     footer_copy: "Все права защищены.",
     scroll: "Вниз"
   },
   ar: {
     badge: "متاح لفرص جديدة",
     hero_title_1: "مرحبا، أنا",
+    hero_name: "يوسف امرزو",
     hero_subtitle: "مهندس صناعي ورقمي",
     hero_desc: "ملف متعدد التخصصات يجمع بين <strong>الهندسة</strong> و<strong>التحول الرقمي</strong> و<strong>الذكاء الاصطناعي</strong> و<strong>الأنظمة الصناعية</strong>. أصمم وأنشر حلولا رقمية تركز على التأثير التشغيلي وخلق القيمة.",
     btn_projects: "مشروعي",
@@ -583,6 +594,7 @@
     footer_text: "مهندس صناعي ورقمي - تحويل الأفكار إلى حلول رقمية مؤثرة.",
     footer_nav: "التنقل",
     footer_follow: "تابعني",
+    footer_name: "يوسف امرزو",
     footer_copy: "جميع الحقوق محفوظة.",
     scroll: "اسحب"
   }
