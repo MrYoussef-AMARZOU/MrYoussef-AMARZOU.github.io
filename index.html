@@ -6,7 +6,7 @@
     <title>YA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,14 +14,28 @@
     <nav class="navbar" id="navbar">
         <a href="#home" class="nav-logo">&lt; YA /&gt;</a>
         <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Accueil</a></li>
-            <li><a href="#about" class="nav-link">A propos</a></li>
-            <li><a href="#skills" class="nav-link">Competences</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">Projets</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#home" class="nav-link active" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="#about" class="nav-link" data-i18n="nav_about">A propos</a></li>
+            <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Competences</a></li>
+            <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Parcours</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projets</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
         <div class="nav-right">
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" id="langBtn" aria-label="Language">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">FR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button data-lang="fr" class="lang-option active"><span class="flag">🇫🇷</span> Français</button>
+                    <button data-lang="en" class="lang-option"><span class="flag">🇬🇧</span> English</button>
+                    <button data-lang="es" class="lang-option"><span class="flag">🇪🇸</span> Español</button>
+                    <button data-lang="zh" class="lang-option"><span class="flag">🇨🇳</span> 中文</button>
+                    <button data-lang="ru" class="lang-option"><span class="flag">🇷🇺</span> Русский</button>
+                    <button data-lang="ar" class="lang-option"><span class="flag">🇲🇦</span> العربية</button>
+                </div>
+            </div>
             <button class="theme-toggle" id="themeToggle" aria-label="Changer de theme">
                 <i class="fas fa-moon"></i>
                 <i class="fas fa-sun"></i>
@@ -37,17 +51,13 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <span class="hero-badge">Disponible pour de nouvelles opportunites</span>
-                <h1>Bonjour, je suis<br><span class="hero-name">Youssef AMARZOU</span></h1>
-                <p class="hero-title">Ingénieur industriel & digital</p>
-                <p class="hero-description">
-                    Profil multidisciplinaire combinant <strong>ingenierie</strong>, <strong>transformation digitale</strong>,
-                    <strong>Intelligence Artificielle</strong> et <strong>systemes industriels</strong>. Je conçois et deploie des
-                    solutions numeriques orientees impact operationnel et creation de valeur.
-                </p>
+                <span class="hero-badge" data-i18n="badge">Disponible pour de nouvelles opportunites</span>
+                <h1><span data-i18n="hero_title_1">Bonjour, je suis</span><br><span class="hero-name">Youssef AMARZOU</span></h1>
+                <p class="hero-title" data-i18n="hero_subtitle">Ingenieur industriel & digital</p>
+                <p class="hero-description" data-i18n-html="hero_desc">Profil multidisciplinaire combinant <strong>ingenierie</strong>, <strong>transformation digitale</strong>, <strong>Intelligence Artificielle</strong> et <strong>systemes industriels</strong>. Je conçois et deploie des solutions numeriques orientees impact operationnel et creation de valeur.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-outline">Me contacter</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="btn_projects">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Me contacter</a>
                 </div>
                 <div class="hero-social">
                     <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -71,7 +81,7 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <span data-i18n="scroll">Scroll</span>
             <div class="scroll-arrow"></div>
         </div>
     </section>
@@ -79,56 +89,44 @@
     <section class="section" id="about">
         <div class="container">
             <span class="section-number">01</span>
-            <h2 class="section-title">A propos</h2>
-            <h3 class="section-subtitle">Qui suis-je ?</h3>
+            <h2 class="section-title" data-i18n="about_title">A propos</h2>
+            <h3 class="section-subtitle" data-i18n="about_subtitle">Qui suis-je ?</h3>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        Ingenieur diplome de l'<strong>UM6P</strong> (Universite Mohammed VI Polytechnique), avec un profil
-                        multidisciplinaire combinant ingenierie, transformation digitale, Intelligence Artificielle et systemes industriels.
-                    </p>
-                    <p>
-                        Capable d'intervenir a differents niveaux d'un projet, de l'analyse du besoin et de la conception
-                        jusqu'a l'integration et au deploiement de solutions numeriques. Profil a l'interface entre enjeux metier,
-                        technologies et systemes, avec une approche orientee conception de solutions, automatisation,
-                        exploitation des donnees et amelioration des processus.
-                    </p>
-                    <p>
-                        Culture <strong>Agile</strong> et <strong>Lean</strong>, philosophie <strong>Learning by Doing</strong> et capacite a
-                        evoluer dans des environnements multidisciplinaires, avec une approche pragmatique orientee
-                        livrables, impact operationnel et creation de valeur.
-                    </p>
+                    <p data-i18n-html="about_p1">Ingenieur diplome de l'<strong>UM6P</strong> (Universite Mohammed VI Polytechnique), avec un profil multidisciplinaire combinant ingenierie, transformation digitale, Intelligence Artificielle et systemes industriels.</p>
+                    <p data-i18n-html="about_p2">Capable d'intervenir a differents niveaux d'un projet, de l'analyse du besoin et de la conception jusqu'a l'integration et au deploiement de solutions numeriques.</p>
+                    <p data-i18n-html="about_p3">Culture <strong>Agile</strong> et <strong>Lean</strong>, philosophie <strong>Learning by Doing</strong> et capacite a evoluer dans des environnements multidisciplinaires.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number" data-count="10">0</span>
-                        <span class="stat-label">Projets GitHub</span>
+                        <span class="stat-label" data-i18n="stat_projects">Projets GitHub</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="6">0</span>
-                        <span class="stat-label">Domaines maitrises</span>
+                        <span class="stat-label" data-i18n="stat_domains">Domaines maitrises</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="2">0</span>
-                        <span class="stat-label">Experiences pro</span>
+                        <span class="stat-label" data-i18n="stat_exp">Experiences pro</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="3">0</span>
-                        <span class="stat-label">Langues</span>
+                        <span class="stat-label" data-i18n="stat_langs">Langues</span>
                     </div>
                 </div>
                 <div class="about-info">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span><strong>Localisation</strong> BenGuerir / Casablanca</span>
+                        <span><strong data-i18n="info_location">Localisation</strong> BenGuerir / Casablanca</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-graduation-cap"></i>
-                        <span><strong>Formation</strong> Master - Technologies Industrielles pour l'Usine du Futur</span>
+                        <span><strong data-i18n="info_formation">Formation</strong> Master - Technologies Industrielles pour l'Usine du Futur</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-language"></i>
-                        <span><strong>Langues</strong> Arabe (Natif), Francais (Courant), Anglais (Courant)</span>
+                        <span><strong data-i18n="info_langs">Langues</strong> Arabe (Natif), Francais (Courant), Anglais (Courant)</span>
                     </div>
                 </div>
             </div>
@@ -138,102 +136,18 @@
     <section class="section section-alt" id="skills">
         <div class="container">
             <span class="section-number">02</span>
-            <h2 class="section-title">Competences</h2>
-            <h3 class="section-subtitle">Stack Technique</h3>
-            <p class="section-desc">Les technologies que j'utilise au quotidien</p>
+            <h2 class="section-title" data-i18n="skills_title">Competences</h2>
+            <h3 class="section-subtitle" data-i18n="skills_subtitle">Stack Technique</h3>
+            <p class="section-desc" data-i18n="skills_desc">Les technologies que j'utilise au quotidien</p>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <h4>IA & Machine Learning</h4>
-                    <div class="skill-tags">
-                        <span>TensorFlow</span>
-                        <span>PyTorch</span>
-                        <span>Scikit-learn</span>
-                        <span>LangChain</span>
-                        <span>ChromaDB</span>
-                        <span>Ollama</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                    <h4>LLM & Generative AI</h4>
-                    <div class="skill-tags">
-                        <span>Claude</span>
-                        <span>ChatGPT</span>
-                        <span>RAG</span>
-                        <span>Prompt Engineering</span>
-                        <span>Agents IA</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
-                    <h4>Industrie 4.0</h4>
-                    <div class="skill-tags">
-                        <span>OPC-UA</span>
-                        <span>Modbus</span>
-                        <span>SCADA/HMI</span>
-                        <span>MATLAB</span>
-                        <span>Capteurs</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h4>Developpement</h4>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>JavaScript</span>
-                        <span>SQL</span>
-                        <span>MongoDB</span>
-                        <span>Docker</span>
-                        <span>Git</span>
-                        <span>Next.js</span>
-                        <span>React</span>
-                        <span>Electron</span>
-                        <span>Rust</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h4>Donnees & ETL</h4>
-                    <div class="skill-tags">
-                        <span>Apache Iceberg</span>
-                        <span>Kafka CDC</span>
-                        <span>InfluxDB</span>
-                        <span>Pandas</span>
-                        <span>Power BI</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-digital-tachograph"></i></div>
-                    <h4>Digitalisation & RPA</h4>
-                    <div class="skill-tags">
-                        <span>Power Platform</span>
-                        <span>UiPath</span>
-                        <span>n8n</span>
-                        <span>Apps Script</span>
-                        <span>ETL</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>Cybersecurite</h4>
-                    <div class="skill-tags">
-                        <span>Pentest IT</span>
-                        <span>OT/SCADA</span>
-                        <span>Framework</span>
-                        <span>Security Audit</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-square-root-alt"></i></div>
-                    <h4>Genie Civil & Calcul</h4>
-                    <div class="skill-tags">
-                        <span>Eurocode 2</span>
-                        <span>Beton Arme</span>
-                        <span>Calcul Structural</span>
-                        <span>BOQ</span>
-                    </div>
-                </div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-brain"></i></div><h4 data-i18n="skill1">IA & Machine Learning</h4><div class="skill-tags"><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>LangChain</span><span>ChromaDB</span><span>Ollama</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4 data-i18n="skill2">LLM & Generative AI</h4><div class="skill-tags"><span>Claude</span><span>ChatGPT</span><span>RAG</span><span>Prompt Engineering</span><span>Agents IA</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-cogs"></i></div><h4 data-i18n="skill3">Industrie 4.0</h4><div class="skill-tags"><span>OPC-UA</span><span>Modbus</span><span>SCADA/HMI</span><span>MATLAB</span><span>Capteurs</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-code"></i></div><h4 data-i18n="skill4">Developpement</h4><div class="skill-tags"><span>Python</span><span>JavaScript</span><span>SQL</span><span>MongoDB</span><span>Docker</span><span>Git</span><span>Next.js</span><span>React</span><span>Electron</span><span>Rust</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><h4 data-i18n="skill5">Donnees & ETL</h4><div class="skill-tags"><span>Apache Iceberg</span><span>Kafka CDC</span><span>InfluxDB</span><span>Pandas</span><span>Power BI</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-digital-tachograph"></i></div><h4 data-i18n="skill6">Digitalisation & RPA</h4><div class="skill-tags"><span>Power Platform</span><span>UiPath</span><span>n8n</span><span>Apps Script</span><span>ETL</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-shield-alt"></i></div><h4 data-i18n="skill7">Cybersecurite</h4><div class="skill-tags"><span>Pentest IT</span><span>OT/SCADA</span><span>Framework</span><span>Security Audit</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-square-root-alt"></i></div><h4 data-i18n="skill8">Genie Civil & Calcul</h4><div class="skill-tags"><span>Eurocode 2</span><span>Beton Arme</span><span>Calcul Structural</span><span>BOQ</span></div></div>
             </div>
         </div>
     </section>
@@ -241,81 +155,37 @@
     <section class="section" id="experience">
         <div class="container">
             <span class="section-number">03</span>
-            <h2 class="section-title">Parcours</h2>
-            <h3 class="section-subtitle">Experience professionnelle</h3>
-            <p class="section-desc">Mon parcours de la data a l'ingenierie IA</p>
-
+            <h2 class="section-title" data-i18n="exp_title">Parcours</h2>
+            <h3 class="section-subtitle" data-i18n="exp_subtitle">Experience professionnelle</h3>
+            <p class="section-desc" data-i18n="exp_desc">Mon parcours de la data a l'ingenierie IA</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Avr 2025 — Oct 2025</span>
-                        <h4>Developpeur Intelligence Reglementaire</h4>
-                        <h5>Nutricrops (Groupe OCP), Casablanca</h5>
-                        <p>
-                            Power Platform (SharePoint, Power Apps, Power Automate, Power BI). Integration et nettoyage
-                            de donnees maitres, digitalisation de process administratifs.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>Power Platform</span>
-                            <span>ETL</span>
-                            <span>Power BI</span>
-                            <span>SharePoint</span>
-                        </div>
+                        <h4 data-i18n="exp1_role">Developpeur Intelligence Reglementaire</h4>
+                        <h5 data-i18n="exp1_company">Nutricrops (Groupe OCP), Casablanca</h5>
+                        <p data-i18n="exp1_desc">Power Platform (SharePoint, Power Apps, Power Automate, Power BI). Integration et nettoyage de donnees maitres.</p>
+                        <div class="timeline-tags"><span>Power Platform</span><span>ETL</span><span>Power BI</span><span>SharePoint</span></div>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Avr 2023 — Jul 2023</span>
-                        <h4>Stagiaire — Amelioration OEE</h4>
-                        <h5>SCCB, Berrechid</h5>
-                        <p>
-                            Analyse et nettoyage de donnees de stock, optimisation avec analyse ABC et loi de Pareto.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>Analyse de donnees</span>
-                            <span>Pareto</span>
-                            <span>OEE</span>
-                        </div>
+                        <h4 data-i18n="exp2_role">Stagiaire — Amelioration OEE</h4>
+                        <h5 data-i18n="exp2_company">SCCB, Berrechid</h5>
+                        <p data-i18n="exp2_desc">Analyse et nettoyage de donnees de stock, optimisation avec analyse ABC et loi de Pareto.</p>
+                        <div class="timeline-tags"><span>Pareto</span><span>OEE</span><span>ABC</span></div>
                     </div>
                 </div>
             </div>
-
-            <h3 class="section-subtitle" style="margin-top: 3rem;">Formation</h3>
+            <h3 class="section-subtitle" style="margin-top: 3rem;" data-i18n="formation_title">Formation</h3>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Sep 2023 — Jul 2025</span>
-                        <h4>Master — Technologies Industrielles pour l'Usine du Futur</h4>
-                        <h5>Green Tech Institute, Universite Mohammed VI Polytechnique, BenGuerir</h5>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Oct 2020 — Jul 2023</span>
-                        <h4>Licence Professionnelle — Genie des Procedes Industriels et Digitalisation</h4>
-                        <h5>Green Tech Institute, Universite Mohammed VI Polytechnique, BenGuerir</h5>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Sep 2017 — Sep 2019</span>
-                        <h4>Classes Preparatoires</h4>
-                        <h5>ENSAM, Casablanca</h5>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Sep 2015 — Jun 2016</span>
-                        <h4>Baccalaureat Mathematiques A — Mention Bien</h4>
-                    </div>
-                </div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="timeline-date">Sep 2023 — Jul 2025</span><h4 data-i18n="form1_title">Master — Technologies Industrielles pour l'Usine du Futur</h4><h5 data-i18n="form1_school">Green Tech Institute, Universite Mohammed VI Polytechnique, BenGuerir</h5></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="timeline-date">Oct 2020 — Jul 2023</span><h4 data-i18n="form2_title">Licence Professionnelle — Genie des Procedes Industriels et Digitalisation</h4><h5 data-i18n="form2_school">Green Tech Institute, Universite Mohammed VI Polytechnique, BenGuerir</h5></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="timeline-date">Sep 2017 — Sep 2019</span><h4 data-i18n="form3_title">Classes Preparatoires</h4><h5 data-i18n="form3_school">ENSAM, Casablanca</h5></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="timeline-date">Sep 2015 — Jun 2016</span><h4 data-i18n="form4_title">Baccalaureat Mathematiques A — Mention Bien</h4></div></div>
             </div>
         </div>
     </section>
@@ -323,236 +193,54 @@
     <section class="section section-alt" id="projects">
         <div class="container">
             <span class="section-number">04</span>
-            <h2 class="section-title">Portfolio</h2>
-            <h3 class="section-subtitle">Projets recents</h3>
-            <p class="section-desc">Une selection de mes projets GitHub</p>
-
+            <h2 class="section-title" data-i18n="proj_title">Portfolio</h2>
+            <h3 class="section-subtitle" data-i18n="proj_subtitle">Projets recents</h3>
+            <p class="section-desc" data-i18n="proj_desc">Une selection de mes projets GitHub</p>
             <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="ai">IA / LLM</button>
-                <button class="filter-btn" data-filter="data">Data Engineering</button>
-                <button class="filter-btn" data-filter="industry">Industriel</button>
-                <button class="filter-btn" data-filter="civil">Genie Civil</button>
-                <button class="filter-btn" data-filter="web">Web / ERP</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
+                <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">IA / LLM</button>
+                <button class="filter-btn" data-filter="data" data-i18n="filter_data">Data Engineering</button>
+                <button class="filter-btn" data-filter="industry" data-i18n="filter_industry">Industriel</button>
+                <button class="filter-btn" data-filter="civil" data-i18n="filter_civil">Genie Civil</button>
+                <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web / ERP</button>
             </div>
-
             <div class="projects-grid">
-                <div class="project-card" data-category="ai">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Metre BA Agent</h4>
-                        <p class="project-type">Agent IA de metrique automatique</p>
-                        <p>Agent IA de metré automatique pour genie civil. Extraction de donnees techniques (plan, metrique, devis) avec automatisation de reporting. Zero-hallucination: texte natif + vecteurs + vision sourcee.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>LLM</span>
-                            <span>Vision</span>
-                            <span>RAG</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/metre-ba-agent" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="civil web">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-building"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>EGF Structural Suite</h4>
-                        <p class="project-type">Suite de calcul structural BTP</p>
-                        <p>48 modules migres du legacy VBA vers Rust + React. Suite open source d'outils de calcul structural pour le genie civil. Automatisation de verifications reglementaires.</p>
-                        <div class="project-tags">
-                            <span>Rust</span>
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Eurocode</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/egf-structural-suite" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://egf-structural-suite.vercel.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="ai data">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-project-diagram"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>RASD Morocco</h4>
-                        <p class="project-type">Pipeline ETL Macroeconomique</p>
-                        <p>Pipeline ETL hybride (MongoDB, Apache Iceberg, Kafka CDC) connectant 3 sources officielles (HCP, BAM, IMF). Dashboard Next.js avec cartes Leaflet, deploye sur Hugging Face Spaces.</p>
-                        <div class="project-tags">
-                            <span>MongoDB</span>
-                            <span>Apache Iceberg</span>
-                            <span>Kafka</span>
-                            <span>Next.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://huggingface.co/spaces/ysfmo98" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="industry">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-industry"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>INDUS</h4>
-                        <p class="project-type">Plateforme SCADA/HMI</p>
-                        <p>Application temps reel (Electron + React) avec protocoles industriels OPC-UA et Modbus. Backend MATLAB avec modeles ML pour maintenance predictive.</p>
-                        <div class="project-tags">
-                            <span>Electron</span>
-                            <span>React</span>
-                            <span>OPC-UA</span>
-                            <span>MATLAB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-hard-hat"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>OpenConstructionERP</h4>
-                        <p class="project-type">ERP Construction Open Source</p>
-                        <p>BOQ, PDF/CAD/BIM takeoff, AI cost matching. 42 catalogues regionaux, 21 langues, 71 modules. Installation via pip.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>ERP</span>
-                            <span>BIM</span>
-                            <span>AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/OpenConstructionERP" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://openconstructionerp.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="industry">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>UiPath Open Source</h4>
-                        <p class="project-type">RPA Automation</p>
-                        <p>4 cas d'automatisation RPA avec REFramework. Robots de processus metier pour la digitalisation des flux de travail.</p>
-                        <div class="project-tags">
-                            <span>UiPath</span>
-                            <span>RPA</span>
-                            <span>REFramework</span>
-                            <span>Automation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/uipath-open-source" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="industry">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-shield-alt"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Pentest Lab</h4>
-                        <p class="project-type">Cybersecurite IT & OT/SCADA</p>
-                        <p>Framework professionnel de pentest pour systemes IT et OT/SCADA. Audit de securite des systemes industriels.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Pentest</span>
-                            <span>SCADA</span>
-                            <span>Security</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/pentest-lab" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="civil">
-                    <div class="project-image">
-                        <div class="project-placeholder"><i class="fas fa-calculator"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h4>pypyBABA</h4>
-                        <p class="project-type">Calcul beton arme — Eurocode 2</p>
-                        <p>Calcul de beton arme selon l'Eurocode 2. Outil open source pour les ingenieurs structure.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Eurocode 2</span>
-                            <span>Structural</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Youssef-AMARZOU/pypyBABA" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://www.pypyBABA.fr" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Site</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="project-card" data-category="ai"><div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div><div class="project-content"><h4>Metre BA Agent</h4><p class="project-type" data-i18n="proj1_type">Agent IA de metrique automatique</p><p data-i18n="proj1_desc">Agent IA de metré automatique pour genie civil.</p><div class="project-tags"><span>Python</span><span>LLM</span><span>Vision</span><span>RAG</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/metre-ba-agent" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a></div></div></div>
+                <div class="project-card" data-category="civil web"><div class="project-image"><div class="project-placeholder"><i class="fas fa-building"></i></div></div><div class="project-content"><h4>EGF Structural Suite</h4><p class="project-type" data-i18n="proj2_type">Suite de calcul structural BTP</p><p data-i18n="proj2_desc">48 modules migres du legacy VBA vers Rust + React.</p><div class="project-tags"><span>Rust</span><span>React</span><span>TypeScript</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/egf-structural-suite" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a><a href="https://egf-structural-suite.vercel.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="btn_demo">Demo</span></a></div></div></div>
+                <div class="project-card" data-category="ai data"><div class="project-image"><div class="project-placeholder"><i class="fas fa-project-diagram"></i></div></div><div class="project-content"><h4>RASD Morocco</h4><p class="project-type" data-i18n="proj3_type">Pipeline ETL Macroeconomique</p><p data-i18n="proj3_desc">Pipeline ETL hybride connectant 3 sources officielles.</p><div class="project-tags"><span>MongoDB</span><span>Iceberg</span><span>Kafka</span><span>Next.js</span></div><div class="project-links"><a href="https://huggingface.co/spaces/ysfmo98" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="btn_demo">Demo</span></a></div></div></div>
+                <div class="project-card" data-category="industry"><div class="project-image"><div class="project-placeholder"><i class="fas fa-industry"></i></div></div><div class="project-content"><h4>INDUS</h4><p class="project-type" data-i18n="proj4_type">Plateforme SCADA/HMI</p><p data-i18n="proj4_desc">Application temps reel avec protocoles industriels OPC-UA et Modbus.</p><div class="project-tags"><span>Electron</span><span>React</span><span>OPC-UA</span><span>MATLAB</span></div><div class="project-links"><a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a></div></div></div>
+                <div class="project-card" data-category="web"><div class="project-image"><div class="project-placeholder"><i class="fas fa-hard-hat"></i></div></div><div class="project-content"><h4>OpenConstructionERP</h4><p class="project-type" data-i18n="proj5_type">ERP Construction Open Source</p><p data-i18n="proj5_desc">BOQ, PDF/CAD/BIM takeoff, AI cost matching.</p><div class="project-tags"><span>Python</span><span>ERP</span><span>BIM</span><span>AI</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/OpenConstructionERP" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a></div></div></div>
+                <div class="project-card" data-category="industry"><div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div><div class="project-content"><h4>UiPath Open Source</h4><p class="project-type" data-i18n="proj6_type">RPA Automation</p><p data-i18n="proj6_desc">4 cas d'automatisation RPA avec REFramework.</p><div class="project-tags"><span>UiPath</span><span>RPA</span><span>REFramework</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/uipath-open-source" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a></div></div></div>
+                <div class="project-card" data-category="industry"><div class="project-image"><div class="project-placeholder"><i class="fas fa-shield-alt"></i></div></div><div class="project-content"><h4>Pentest Lab</h4><p class="project-type" data-i18n="proj7_type">Cybersecurite IT & OT/SCADA</p><p data-i18n="proj7_desc">Framework professionnel de pentest pour systemes IT et OT/SCADA.</p><div class="project-tags"><span>Python</span><span>Pentest</span><span>SCADA</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/pentest-lab" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a></div></div></div>
+                <div class="project-card" data-category="civil"><div class="project-image"><div class="project-placeholder"><i class="fas fa-calculator"></i></div></div><div class="project-content"><h4>pypyBABA</h4><p class="project-type" data-i18n="proj8_type">Calcul beton arme — Eurocode 2</p><p data-i18n="proj8_desc">Calcul de beton arme selon l'Eurocode 2.</p><div class="project-tags"><span>Python</span><span>Eurocode 2</span></div><div class="project-links"><a href="https://github.com/Youssef-AMARZOU/pypyBABA" target="_blank" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a><a href="https://www.pypyBABA.fr" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="btn_site">Site</span></a></div></div></div>
             </div>
-
-            <div class="projects-cta">
-                <a href="https://github.com/Youssef-AMARZOU" target="_blank" class="btn btn-outline">Voir tous mes projets sur GitHub</a>
-            </div>
+            <div class="projects-cta"><a href="https://github.com/Youssef-AMARZOU" target="_blank" class="btn btn-outline" data-i18n="btn_all_projects">Voir tous mes projets sur GitHub</a></div>
         </div>
     </section>
 
     <section class="section" id="contact">
         <div class="container">
             <span class="section-number">05</span>
-            <h2 class="section-title">Contact</h2>
-            <h3 class="section-subtitle">Travaillons ensemble</h3>
-            <p class="section-desc">Toujours ouvert a de nouvelles opportunites et collaborations</p>
-
+            <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+            <h3 class="section-subtitle" data-i18n="contact_subtitle">Travaillons ensemble</h3>
+            <p class="section-desc" data-i18n="contact_desc">Toujours ouvert a de nouvelles opportunites et collaborations</p>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h4>Discutons de votre projet</h4>
-                    <p>
-                        Vous avez un projet en tete, une idee a automatiser, ou simplement envie d'echanger ?
-                        N'hesitez pas a me contacter, je reponds rapidement !
-                    </p>
+                    <h4 data-i18n="contact_heading">Discutons de votre projet</h4>
+                    <p data-i18n="contact_p">Vous avez un projet en tete ? N'hesitez pas a me contacter, je reponds rapidement !</p>
                     <div class="contact-links">
-                        <a href="mailto:youssef.amarzou@yahoo.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                            <small>youssef.amarzou@yahoo.com</small>
-                        </a>
-                        <a href="https://linkedin.com/in/youssef-amarzou-8b18413a7" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                            <small>youssef-amarzou</small>
-                        </a>
-                        <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="contact-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                            <small>@MrYoussef-AMARZOU</small>
-                        </a>
+                        <a href="mailto:youssef.amarzou@yahoo.com" class="contact-link"><i class="fas fa-envelope"></i><span data-i18n="contact_email">Email</span><small>youssef.amarzou@yahoo.com</small></a>
+                        <a href="https://linkedin.com/in/youssef-amarzou-8b18413a7" target="_blank" class="contact-link"><i class="fab fa-linkedin-in"></i><span data-i18n="contact_linkedin">LinkedIn</span><small>youssef-amarzou</small></a>
+                        <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" class="contact-link"><i class="fab fa-github"></i><span data-i18n="contact_github">GitHub</span><small>@MrYoussef-AMARZOU</small></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Votre email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Sujet" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Votre message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+                        <div class="form-group"><input type="text" data-i18n-placeholder="form_name" placeholder="Votre nom" required></div>
+                        <div class="form-group"><input type="email" data-i18n-placeholder="form_email" placeholder="Votre email" required></div>
+                        <div class="form-group"><input type="text" data-i18n-placeholder="form_subject" placeholder="Sujet" required></div>
+                        <div class="form-group"><textarea data-i18n-placeholder="form_msg" placeholder="Votre message" rows="5" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full" data-i18n="form_send">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -563,20 +251,20 @@
         <div class="container">
             <div class="footer-content">
                 <a href="#home" class="footer-logo">&lt; YA /&gt;</a>
-                <p class="footer-text">Ingénieur industriel & digital — Transformer les idees en solutions numeriques impactantes.</p>
+                <p class="footer-text" data-i18n="footer_text">Ingenieur industriel & digital — Transformer les idees en solutions numeriques impactantes.</p>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h5>Navigation</h5>
+                        <h5 data-i18n="footer_nav">Navigation</h5>
                         <ul>
-                            <li><a href="#home">Accueil</a></li>
-                            <li><a href="#about">A propos</a></li>
-                            <li><a href="#skills">Competences</a></li>
-                            <li><a href="#experience">Experience</a></li>
-                            <li><a href="#projects">Projets</a></li>
+                            <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
+                            <li><a href="#about" data-i18n="nav_about">A propos</a></li>
+                            <li><a href="#skills" data-i18n="nav_skills">Competences</a></li>
+                            <li><a href="#experience" data-i18n="nav_experience">Parcours</a></li>
+                            <li><a href="#projects" data-i18n="nav_projects">Projets</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h5>Me suivre</h5>
+                        <h5 data-i18n="footer_follow">Me suivre</h5>
                         <div class="footer-social">
                             <a href="https://github.com/MrYoussef-AMARZOU" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://github.com/Youssef-AMARZOU" target="_blank"><i class="fab fa-github"></i></a>
@@ -587,12 +275,11 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; Youssef AMARZOU. Tous droits reserves.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; Youssef AMARZOU. <span data-i18n="footer_copy">Tous droits reserves.</span></p></div>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
