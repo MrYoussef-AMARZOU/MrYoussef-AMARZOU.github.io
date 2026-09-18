@@ -326,6 +326,7 @@ body {
 .hero-visual {
     flex-shrink: 0;
     position: relative;
+    z-index: 1;
 }
 
 .hero-image-wrapper {
@@ -337,7 +338,6 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
     padding: 4px;
 }
 
@@ -353,10 +353,11 @@ body {
 .hero-tags {
     position: absolute;
     top: -10px;
-    right: -30px;
+    right: -50px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    z-index: 10;
 }
 
 .tag {
@@ -1059,7 +1060,7 @@ body {
     }
 
     .hero-tags {
-        right: -10px;
+        right: -20px;
     }
 
     .about-stats {
