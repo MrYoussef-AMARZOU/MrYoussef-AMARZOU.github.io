@@ -61,15 +61,14 @@ body {
 }
 
 .nav-logo {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
     display: flex;
-    gap: 1px;
+    align-items: center;
 }
-.logo-y { color: var(--accent); }
-.logo-a { color: var(--fg); }
+
+.logo-img {
+    height: 32px;
+    width: auto;
+}
 
 .nav-links {
     display: flex;
