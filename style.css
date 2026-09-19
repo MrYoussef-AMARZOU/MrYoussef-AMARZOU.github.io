@@ -63,11 +63,14 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .logo-img {
-    height: 32px;
-    width: auto;
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .nav-links {
