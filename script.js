@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langOptions = document.querySelectorAll('.lang-option');
     const currentLangEl = document.getElementById('currentLang');
     let currentLang = localStorage.getItem('lang') || 'fr';
+    let activeFilter = 'all';
 
     // Theme toggle
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -121,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Live GitHub projects
     const GITHUB_USERS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU'];
-    let activeFilter = 'all';
     let githubCache = [];
 
     const TOPIC_MAP = {
