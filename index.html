@@ -268,11 +268,15 @@
                     <h2 class="section-title" data-i18n="proj_title">Portfolio</h2>
                     <p class="section-desc" data-i18n="proj_desc">Une selection de mes projets GitHub</p>
                 </div>
-                <a href="https://github.com/Youssef-AMARZOU" target="_blank" class="btn btn-outline btn-sm">
-                    <span data-i18n="btn_all_projects">Tous les projets</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                <div class="section-header-actions">
+                    <span class="live-badge"><span class="live-dot"></span><span data-i18n="proj_live">Live GitHub</span></span>
+                    <a href="https://github.com/MrYoussef-AMARZOU" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                        <span data-i18n="btn_all_projects">Tous les projets</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
+            <p class="projects-status" id="projectsStatus">Chargement des projets depuis GitHub...</p>
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
                 <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">IA / LLM</button>
@@ -281,7 +285,7 @@
                 <button class="filter-btn" data-filter="civil" data-i18n="filter_civil">Genie Civil</button>
                 <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web / ERP</button>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid" id="projectsGrid">
                 <div class="project-card" data-category="ai">
                     <div class="project-head">
                         <div class="project-icon"><i class="fas fa-robot"></i></div>

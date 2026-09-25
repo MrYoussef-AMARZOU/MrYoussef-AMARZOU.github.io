@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navLinkItems = document.querySelectorAll('.nav-link');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectsStatus = document.getElementById('projectsStatus');
     const contactForm = document.getElementById('contactForm');
     const themeToggle = document.getElementById('themeToggle');
     const langBtn = document.getElementById('langBtn');
     const langDropdown = document.getElementById('langDropdown');
     const langOptions = document.querySelectorAll('.lang-option');
     const currentLangEl = document.getElementById('currentLang');
+    let currentLang = localStorage.getItem('lang') || 'fr';
 
     // Theme toggle
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setLanguage(lang) {
         if (!translations[lang]) return;
         const t = translations[lang];
+        currentLang = lang;
 
         // Set RTL for Arabic
         if (lang === 'ar') {
@@ -79,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         langOptions.forEach(opt => {
             opt.classList.toggle('active', opt.dataset.lang === lang);
         });
+
+        applyFilter();
     }
 
     // Navbar scroll effect
@@ -114,24 +119,142 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Project filters
+    // Live GitHub projects
+    const GITHUB_USERS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU'];
+    let activeFilter = 'all';
+    let githubCache = [];
+
+    const TOPIC_MAP = {
+        ai: ['ai', 'llm', 'agent', 'rag', 'ml', 'machine-learning', 'deep-learning', 'nlp', 'computer-vision', 'pytorch', 'tensorflow', 'langchain', 'genai', 'llama'],
+        data: ['data', 'etl', 'pipeline', 'kafka', 'iceberg', 'mongodb', 'sql', 'analytics', 'pandas', 'power-bi', 'data-engineering', 'spark'],
+        industry: ['industry', 'iiot', 'iot', 'scada', 'plc', 'opcua', 'modbus', 'hmi', 'matlab', 'automation', 'rpa', 'factory'],
+        civil: ['civil', 'structural', 'genie-civil', 'beton', 'concrete', 'eurocode', 'construction', 'building', 'boq', 'bim'],
+        web: ['web', 'react', 'nextjs', 'vue', 'angular', 'frontend', 'fullstack', 'dashboard', 'erp', 'saas', 'javascript', 'typescript']
+    };
+
+    function detectCategory(repo) {
+        const haystack = [
+            ...(repo.topics || []),
+            repo.name || '',
+            repo.description || '',
+            repo.language || ''
+        ].join(' ').toLowerCase();
+
+        const cats = Object.keys(TOPIC_MAP).filter(cat =>
+            TOPIC_MAP[cat].some(topic => haystack.includes(topic))
+        );
+
+        if (!cats.length) {
+            const lang = (repo.language || '').toLowerCase();
+            if (['python', 'typescript', 'javascript', 'rust', 'go'].includes(lang)) cats.push('web');
+            else cats.push('data');
+        }
+
+        return cats;
+    }
+
+    function escapeHtml(str) {
+        return String(str == null ? '' : str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    const ICONS = {
+        ai: 'fa-robot',
+        data: 'fa-database',
+        industry: 'fa-industry',
+        civil: 'fa-helmet-safety',
+        web: 'fa-code'
+    };
+
+    function buildProjectCard(repo) {
+        const cats = detectCategory(repo);
+        const category = cats.join(' ');
+        const primaryIcon = ICONS[cats[0]] || 'fa-code';
+        const topics = (repo.topics || []).slice(0, 4);
+        const langTag = repo.language ? `<span>${escapeHtml(repo.language)}</span>` : '';
+        const topicTags = topics.map(t => `<span>${escapeHtml(t)}</span>`).join('');
+        const homepage = repo.homepage
+            ? `<a href="${escapeHtml(repo.homepage)}" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="btn_demo">Demo</span></a>`
+            : '';
+        const stars = repo.stargazers_count
+            ? `<span class="project-stars"><i class="fas fa-star"></i> ${repo.stargazers_count}</span>`
+            : '';
+
+        return `
+            <article class="project-card" data-category="${category}">
+                <div class="project-head">
+                    <div class="project-icon"><i class="fas ${primaryIcon}"></i></div>
+                    <div class="project-head-text">
+                        <h4>${escapeHtml(repo.name)}</h4>
+                        ${stars}
+                    </div>
+                </div>
+                <p class="project-desc">${escapeHtml(repo.description || '')}</p>
+                <div class="project-tags">${langTag}${topicTags}</div>
+                <div class="project-links-row">
+                    <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a>
+                    ${homepage}
+                </div>
+            </article>`;
+    }
+
+    function applyFilter() {
+        if (!projectsGrid) return;
+        projectsGrid.querySelectorAll('.project-card').forEach(card => {
+            const show = activeFilter === 'all' || card.dataset.category.split(' ').includes(activeFilter);
+            card.classList.toggle('hidden', !show);
+        });
+    }
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            projectCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category.includes(filter)) {
-                    card.classList.remove('hidden');
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            activeFilter = btn.dataset.filter;
+            applyFilter();
         });
     });
+
+    async function fetchProjects() {
+        if (!projectsGrid) return;
+
+        const results = await Promise.allSettled(
+            GITHUB_USERS.map(user =>
+                fetch(`https://api.github.com/users/${user}/repos?per_page=100&sort=updated`, {
+                    headers: { 'Accept': 'application/vnd.github+json' }
+                }).then(res => {
+                    if (!res.ok) throw new Error(res.status);
+                    return res.json();
+                })
+            )
+        );
+
+        const repos = results
+            .filter(r => r.status === 'fulfilled')
+            .flatMap(r => r.value)
+            .filter(repo => !repo.fork && !repo.archived)
+            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+        if (!repos.length) {
+            if (projectsStatus) {
+                projectsStatus.textContent = 'GitHub API indisponible (rate limit). Rechargez la page.';
+                projectsStatus.hidden = false;
+            }
+            return;
+        }
+
+        githubCache = repos;
+        projectsGrid.innerHTML = repos.map(buildProjectCard).join('');
+        if (projectsStatus) projectsStatus.hidden = true;
+        applyFilter();
+        setLanguage(currentLang);
+    }
+
+    fetchProjects();
 
     // Counter animation
     const animateCounter = (el) => {
