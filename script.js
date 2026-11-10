@@ -202,6 +202,23 @@ document.addEventListener('DOMContentLoaded', () => {
             </article>`;
     }
 
+    // Pinned project (Kaggle) — kept outside the GitHub feed so it survives the live refresh
+    const PINNED_CARD = `
+            <article class="project-card" data-category="ai data">
+                <div class="project-head">
+                    <div class="project-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="project-head-text">
+                        <h4>RSNA Knee Detection</h4>
+                    </div>
+                </div>
+                <p class="project-type" data-i18n="proj9_type">Compet Kaggle — Détection IRM du genou</p>
+                <p class="project-desc" data-i18n="proj9_desc">Prédiction de 12 lésions du genou sur IRM DICOM : DINOv2 + attention MIL, sélection de séquences sur 3 plans, TTA.</p>
+                <div class="project-tags"><span>Python</span><span>PyTorch</span><span>DICOM</span><span>MRI</span></div>
+                <div class="project-links-row">
+                    <a href="https://www.kaggle.com/amarzouyoussef" target="_blank" rel="noopener" class="project-link"><i class="fab fa-kaggle"></i> Kaggle</a>
+                </div>
+            </article>`;
+
     function applyFilter() {
         if (!projectsGrid) return;
         projectsGrid.querySelectorAll('.project-card').forEach(card => {
@@ -248,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         githubCache = repos;
-        projectsGrid.innerHTML = repos.map(buildProjectCard).join('');
+        projectsGrid.innerHTML = PINNED_CARD + repos.map(buildProjectCard).join('');
         if (projectsStatus) projectsStatus.hidden = true;
         applyFilter();
         setLanguage(currentLang);
