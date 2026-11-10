@@ -246,6 +246,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </article>`;
 
+    // Keep the "Projets GitHub" stat in sync with the live feed
+    function updateProjectStat(count) {
+        const label = document.querySelector('[data-i18n="stat_projects"]');
+        if (!label) return;
+        const el = label.parentElement.querySelector('.stat-number');
+        if (!el) return;
+        el.dataset.count = String(count);
+        if (el.dataset.animated) el.textContent = String(count);
+    }
+
     function applyFilter() {
         if (!projectsGrid) return;
         projectsGrid.querySelectorAll('.project-card').forEach(card => {
@@ -307,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         githubCache = repos;
         projectsGrid.innerHTML = PINNED_CARD + repos.map(buildProjectCard).join('');
+        updateProjectStat(repos.length);
         if (projectsStatus) projectsStatus.hidden = true;
         applyFilter();
         setLanguage(currentLang);
