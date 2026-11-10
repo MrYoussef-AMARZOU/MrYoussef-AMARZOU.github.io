@@ -122,6 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Live GitHub projects
     const GITHUB_USERS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU'];
+    // Not real projects: profile READMEs, GitHub Pages site repos, tutorial clones
+    const NON_PROJECT_REPOS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU', 'Mr-Youssef', 'skills-introduction-to-github'];
+    // Own contribution to a fork worth showing anyway
+    const CONTRIBUTED_FORKS = ['opencode-ip-rotator'];
+    // Extra tags not present in GitHub repo topics
+    const EXTRA_TAGS = {
+        'pentest-lab': ['Kali Linux']
+    };
     let githubCache = [];
 
     const TOPIC_MAP = {
@@ -177,6 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const topics = (repo.topics || []).slice(0, 4);
         const langTag = repo.language ? `<span>${escapeHtml(repo.language)}</span>` : '';
         const topicTags = topics.map(t => `<span>${escapeHtml(t)}</span>`).join('');
+        const forkTag = repo.fork ? '<span>Fork</span>' : '';
+        const extraTags = (EXTRA_TAGS[repo.name] || []).map(t => `<span>${escapeHtml(t)}</span>`).join('');
         const homepage = repo.homepage
             ? `<a href="${escapeHtml(repo.homepage)}" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="btn_demo">Demo</span></a>`
             : '';
@@ -194,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <p class="project-desc">${escapeHtml(repo.description || '')}</p>
-                <div class="project-tags">${langTag}${topicTags}</div>
+                <div class="project-tags">${langTag}${forkTag}${extraTags}${topicTags}</div>
                 <div class="project-links-row">
                     <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> <span data-i18n="btn_code">Code</span></a>
                     ${homepage}
@@ -253,7 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const repos = results
             .filter(r => r.status === 'fulfilled')
             .flatMap(r => r.value)
-            .filter(repo => !repo.fork && !repo.archived)
+            .filter(repo => {
+                const name = repo.name || '';
+                if (NON_PROJECT_REPOS.includes(name)) return false;   // profile READMEs, tutorial clones
+                if (/\.github\.io$/.test(name)) return false;         // site HTML repos
+                if (CONTRIBUTED_FORKS.includes(name)) return true;    // shown despite being a fork
+                return !repo.fork && !repo.archived;
+            })
             .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
         if (!repos.length) {
