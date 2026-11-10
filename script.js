@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Live GitHub projects
-    const GITHUB_USERS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU'];
+    // Live GitHub projects (2 user accounts + the CortexLLMs organization)
+    const GITHUB_USERS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU', 'CortexLLMs'];
     // Not real projects: profile READMEs, GitHub Pages site repos, tutorial clones
     const NON_PROJECT_REPOS = ['MrYoussef-AMARZOU', 'Youssef-AMARZOU', 'Mr-Youssef', 'skills-introduction-to-github'];
     // Own contribution to a fork worth showing anyway
@@ -260,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             )
         );
 
+        const seen = new Set();
         const repos = results
             .filter(r => r.status === 'fulfilled')
             .flatMap(r => r.value)
@@ -270,7 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (CONTRIBUTED_FORKS.includes(name)) return true;    // shown despite being a fork
                 return !repo.fork && !repo.archived;
             })
-            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+            // dedup: the same repo name can exist on both accounts and in the org
+            .filter(repo => {
+                const key = (repo.name || '').toLowerCase();
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
 
         if (!repos.length) {
             if (projectsStatus) {
