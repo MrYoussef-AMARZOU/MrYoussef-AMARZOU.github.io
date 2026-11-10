@@ -130,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const EXTRA_TAGS = {
         'pentest-lab': ['Kali Linux']
     };
+    // Repos that also belong to the Healthcare / Santé filter
+    const HEALTH_REPOS = ['carewatch'];
     let githubCache = [];
 
     const TOPIC_MAP = {
@@ -158,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             else cats.push('data');
         }
 
+        if (HEALTH_REPOS.includes((repo.name || '').toLowerCase()) && !cats.includes('health')) cats.push('health');
+
         return cats;
     }
 
@@ -175,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         data: 'fa-database',
         industry: 'fa-industry',
         civil: 'fa-helmet-safety',
-        web: 'fa-code'
+        web: 'fa-code',
+        health: 'fa-heart-pulse'
     };
 
     function buildProjectCard(repo) {
@@ -214,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pinned project (Kaggle) — kept outside the GitHub feed so it survives the live refresh
     const PINNED_CARD = `
-            <article class="project-card" data-category="ai data">
+            <article class="project-card" data-category="ai data health">
                 <div class="project-head">
                     <div class="project-icon"><i class="fas fa-microscope"></i></div>
                     <div class="project-head-text">
