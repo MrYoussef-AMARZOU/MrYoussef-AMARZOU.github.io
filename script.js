@@ -78,6 +78,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (t[key]) el.placeholder = t[key];
         });
 
+        // Update keyword lists rendered as chips (split on ·)
+        document.querySelectorAll('[data-i18n-chips]').forEach(el => {
+            const key = el.getAttribute('data-i18n-chips');
+            if (t[key]) {
+                el.innerHTML = t[key].split('·')
+                    .map(s => s.trim())
+                    .filter(Boolean)
+                    .map(s => `<span>${escapeHtml(s)}</span>`)
+                    .join('');
+            }
+        });
+
         // Update lang button
         currentLangEl.textContent = lang.toUpperCase();
         langOptions.forEach(opt => {
